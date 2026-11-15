@@ -30,11 +30,11 @@ public class AutenticacionDM {
                 return respuesta;
             }
         String passwordCifrado = Utilidades.generarCifradoSHA256(password);
-        int idColaborador = contrato.verificarCredenciales(noPersonal, password);
+        int idColaborador = contrato.verificarCredenciales(noPersonal, passwordCifrado);
         if(idColaborador == CREDENCIALES_INCORRECTAS){
             respuesta.setCredencialesCorrectas(false);
             respuesta.setMensaje("No. Personal y/o contraseña incorrectos"
-                    + "/nFavor de verificar la información");
+                    + "\nFavor de verificar la información");
             return respuesta;
         }
         ColaboradorEstatus estatus = contrato.verificarEstatusColaborador(idColaborador);

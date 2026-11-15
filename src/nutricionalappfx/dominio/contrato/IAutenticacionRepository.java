@@ -13,7 +13,7 @@ import nutricionalappfx.dominio.pojo.ColaboradorEstatus;
  */
 public interface IAutenticacionRepository {
     
-    public int verificarCredenciales(String noPersonal, String contraseña) throws RuntimeException;
+    public int verificarCredenciales(String noPersonal, String password) throws RuntimeException;
     
     public ColaboradorEstatus verificarEstatusColaborador(int idColaborador) throws RuntimeException;
     
