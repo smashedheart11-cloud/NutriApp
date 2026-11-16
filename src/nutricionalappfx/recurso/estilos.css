@@ -1,0 +1,35 @@
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+/* Encabezado blanco sin bordes verticales */
+.table-view .column-header-background {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #D0D0D0 transparent;
+    -fx-border-width: 1px;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+/* Filas blancas con solo línea divisoria inferior */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #E0E0E0 transparent;
+    -fx-border-width: 1px;
+    -fx-cell-size: 38px;
+}
+
+/* Quitar líneas verticales entre columnas */
+.table-cell {
+    -fx-border-color: transparent;
+    -fx-alignment: CENTER;
+}
