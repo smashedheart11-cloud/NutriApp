@@ -33,3 +33,72 @@
     -fx-border-color: transparent;
     -fx-alignment: CENTER;
 }
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #8CC63F;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10 6 10;
+}
+
+.text-field:focused {
+    /* Cambia el borde azul sólido por verde oscuro */
+    -fx-focus-color: #68B044;
+    /* Cambia el resplandor exterior azul por un halo verde suave (último valor = opacidad) */
+    -fx-faint-focus-color: rgba(120, 184, 66, 0.25);
+    -fx-border-color: #68B044;
+    -fx-border-width: 1.5px;
+}
+
+/* Banda superior verde pastel con línea inferior oscura (para los Label) */
+.campo-titulo {
+    -fx-background-color: #E6F3DC;
+    -fx-padding: 6 10 6 10;
+    -fx-border-color: transparent transparent #8CC63F transparent;
+    -fx-border-width: 0 0 2px 0;
+}
+
+/* TextField sin bordes laterales, solo línea gris abajo */
+.campo-linea {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #8CC63F transparent;
+    -fx-border-width: 0 0 1.5px 0;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 8 6 8 6;
+}
+
+.campo-linea:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: transparent transparent #8CC63F transparent;
+    -fx-border-width: 0 0 2px 0;
+}
+
+/* DatePicker adaptado al mismo estilo de línea inferior */
+.date-picker.campo-linea {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #8CC63F transparent;
+    -fx-border-width: 0 0 1.5px 0;
+    -fx-border-radius: 0;
+}
+
+.date-picker.campo-linea .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker.campo-linea .arrow-button .arrow {
+    -fx-background-color: #4E8D2C;
+}
+
+/* RadioButton con punto verde al seleccionarse */
+.radio-button:selected .radio .dot {
+    -fx-background-color: #68B044;
+}
+
+.radio-button .radio {
+    -fx-border-color: #8CC63F;
+    -fx-border-radius: 10px;
+    -fx-background-color: white;
+}
