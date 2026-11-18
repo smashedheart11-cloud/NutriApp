@@ -4,11 +4,20 @@
  */
 package nutricionalappfx.controlador;
 
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import nutricionalappfx.NutricionalAppFX;
 import nutricionalappfx.dominio.pojo.Colaborador;
 
 /**
@@ -23,6 +32,8 @@ public class FXMLPrincipalController implements Initializable {
     private Label lbNombre;
     @FXML
     private Label lbRol;
+    @FXML
+    private Button btnAdministrarPacientes;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -38,6 +49,23 @@ public class FXMLPrincipalController implements Initializable {
         if(colaborador != null){
             lbNombre.setText("Bienvenido/a " + colaborador.toString());
             lbRol.setText("Rol: " + colaborador.getRol());
+        }
+    }
+
+    @FXML
+    private void handleBtnAdministrarPacientes(javafx.event.ActionEvent event) {
+        try{
+            Stage escenario = new Stage();
+            FXMLLoader loader = new FXMLLoader(NutricionalAppFX.class.getResource("vista/FXMLAdministrarPacientes.fxml"));
+            Parent vista = loader.load();
+            FXMLAdministrarPacientesController controlador = loader.getController();
+            Scene escena = new Scene(vista);
+            escenario.setScene(escena);
+            escenario.setTitle("Administrador de pacientes");
+            escenario.initModality(Modality.APPLICATION_MODAL);
+            escenario.showAndWait();
+        } catch (IOException ex){
+            ex.printStackTrace();
         }
     }
     

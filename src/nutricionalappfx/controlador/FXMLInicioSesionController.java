@@ -72,7 +72,7 @@ public class FXMLInicioSesionController implements Initializable {
             if(respuesta.isCredencialesCorrectas() && respuesta.isActivo()){
                 Utilidades.mostrarAlertaSimple("Credenciales correctas",
                         respuesta.getMensaje(), Alert.AlertType.INFORMATION);
-                //TODO: ENviar a pantalla principal
+                irPantallaPrincipal(respuesta.getColaborador());
             } else {
                 Utilidades.mostrarAlertaSimple("Lo sentimos",
                         respuesta.getMensaje(), Alert.AlertType.WARNING);
