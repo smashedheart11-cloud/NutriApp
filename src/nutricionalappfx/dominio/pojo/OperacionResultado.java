@@ -13,7 +13,7 @@ public class OperacionResultado {
     private boolean error;
     private String mensaje;
     
-    private OperacionResultado(){
+    public OperacionResultado(){
     }
 
     public OperacionResultado(boolean error, String mensaje) {

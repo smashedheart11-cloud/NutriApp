@@ -9,8 +9,12 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import nutricionalappfx.dominio.pojo.Paciente;
 
 /**
  * FXML Controller class
@@ -19,8 +23,10 @@ import javafx.scene.image.ImageView;
  */
 public class FXMLAdministrarPacientesController implements Initializable {
 
+    private int idNutriologo;
+    
     @FXML
-    private TextField lbBusqueda;
+    private TableView<?> tvPacientes;
     @FXML
     private Button btnBusqueda;
     @FXML
@@ -30,14 +36,45 @@ public class FXMLAdministrarPacientesController implements Initializable {
     @FXML
     private Button btnDarDeBaja;
     @FXML
-    private ImageView btnRegresar;
+    private ImageView btnRegresar;    
+    @FXML
+    private TextField tfBuscarPaciente;
+    
+    @FXML
+    private TableColumn colCodigo;
+    @FXML
+    private TableColumn colNombre;
+    @FXML
+    private TableColumn colApellidoPaterno;
+    @FXML
+    private TableColumn colApellidoMaterno;
+    @FXML
+    private TableColumn colFechaNacimiento;
+    @FXML
+    private TableColumn<?, ?> colPeso;
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        configurarColumnasTabla();
+        
     }    
     
+    private void configurarColumnasTabla(){
+        colCodigo.setCellValueFactory(new PropertyValueFactory("codigo"));
+        colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+        colApellidoPaterno.setCellValueFactory(new PropertyValueFactory("apellidoPaterno"));
+        colApellidoMaterno.setCellValueFactory(new PropertyValueFactory("apellidoMaterno"));
+        colFechaNacimiento.setCellValueFactory(new PropertyValueFactory("fechaNacimiento"));
+        colPeso.setCellValueFactory(new PropertyValueFactory("pesoInicial"));
+    }
+    
+    public void recibirInformacion(int idNutriologo){
+        this.idNutriologo = idNutriologo;
+        
+        
+    }
 }
